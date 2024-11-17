@@ -69,6 +69,7 @@ let boltangka = document.getElementById('boltangka');
 let boltangki = document.getElementById('boltangki');
 let pohon = document.getElementById('pohon');
 let bangunan = document.getElementById('bangunan');
+let logo = document.getElementById('logo');
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
@@ -80,6 +81,8 @@ window.addEventListener('scroll', () => {
     boltangki.style.top = value * -2.5 + 'px';
     pohon.style.left = value * 2.5 + 'px';
     bangunan.style.left = value * -2.5 + 'px';
+    logo.style.marginTop = value * -2.5 + 'px';
+
 });
 // end Hero
 
