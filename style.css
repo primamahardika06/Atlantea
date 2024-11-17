@@ -117,7 +117,7 @@ nav .kanan {
     position: fixed;
     top: 10vh;
     width: 100%;
-    background-color: black;
+    background-color: rgba(10, 80, 230, 0.5);
     display: none;
     flex-direction: column;
     gap: 10px;
@@ -137,8 +137,12 @@ nav .kanan {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    nav .title{
+    nav .title a{
         font-size: 12px;
+    }
+
+    nav .title img{
+        width: 50px;
     }
     nav {
         gap: 35vh;
@@ -301,7 +305,7 @@ nav .kanan {
 }
 
   /* Smartphone Android dengan lebar maksimum 480px */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .text-hero{
         z-index: 50;
     }
@@ -437,6 +441,31 @@ nav .kanan {
     width: 60%;
     border-radius: 20px;
 }
+
+@media screen and (max-width:760px){
+
+    .secmain {
+       display: flex;
+       flex-direction: column-reverse;
+    }
+    .teks-secmain {
+        padding: 12px 16px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media screen and (max-width:560px){
+
+    .secmain {
+       display: flex;
+       flex-direction: column-reverse;
+    }
+    .teks-secmain {
+        padding: 12px 16px;
+        font-size: 12px;
+        text-align: center;
+    }
+}
 /* End Section Second */
 
 /* Manfaat start */
@@ -500,6 +529,55 @@ nav .kanan {
     border: 2px solid #00ffff;
     box-shadow: 2px 0px 20px 8px rgb(7, 199, 220);
 }
+
+@media screen and (max-width: 1028px) {
+    .circle img{
+        width: 150px;
+        height: 150px;;
+    }
+
+    .manfaat h1{
+        font-size: 20px;
+    }
+
+    .title_manfaat h3{
+       font-size: 16px;
+    }
+}
+@media screen and (max-width: 890px) {
+    .circle img{
+        width: 100px;
+        height: 100px;;
+    }
+
+    .manfaat h1{
+        font-size: 20px;
+    }
+
+    .title_manfaat h3{
+       font-size: 16px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .circle img{
+        width: 200px;
+        height: 200px;;
+    }
+
+    .manfaat h1{
+        font-size: 20px;
+    }
+
+    .title_manfaat h3{
+       font-size: 16px;
+    }
+
+    .circle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 /* Manfaat End */
 
 
@@ -543,13 +621,6 @@ nav .kanan {
     gap: 5px;
 }
 
-#map {
-    position: relative;
-    width: 50%;
-    height: calc(100vh - 100px);
-    background: url('asset/maps.png') no-repeat center center;
-    background-size: cover;
-}
 
 #map {
     aspect-ratio: 1/1;
@@ -557,7 +628,6 @@ nav .kanan {
     width: 90%;
     margin-top: 20px;
     position: relative;
-    width: 50%;
     height: calc(100vh - 100px);
     background: url('asset/maps.png') no-repeat center center;
     background-size: cover;
@@ -594,6 +664,51 @@ nav .kanan {
 .statistik h2 {
     font-size: 12px;
     font-family: var(--font-family2);
+}
+
+@media screen and (max-width:780px){
+
+    .tri{
+        padding: 20px;
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sec-tri {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        padding: 12px 20px;
+        margin: 32px 40px 32px 40px;
+    }
+
+    #map {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        width: 10%;
+        margin-left: 36px;
+        margin-top: 20px;
+        position: relative;
+        height: calc(100vh - 100px);
+        background: url('asset/maps.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .statistik {
+        display: flex;
+        flex-direction: column;
+        width: 180px;
+        margin-left: 60px;
+    }
+
+    .tri p,h1{
+        text-align: center;
+    }
 }
 /* End Section 3 */
 
@@ -1025,4 +1140,15 @@ footer{
 .sosmed .bx:hover{
    transform:scale(1.2);
 }
+
+@media screen and (max-width:580px) {
+    .logo_footer a{
+        font-size: 12px;
+    }
+    .logo_footer img{
+        width: 50px;
+    }
+}
+
+
 /* End Footer */
