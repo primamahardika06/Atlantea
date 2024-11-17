@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    
+}
+
+body{
     overflow-x: hidden;
 }
 
@@ -55,7 +59,6 @@ nav .navbar a {
 
 .navbar a:hover {
     color: blue;
-    border-bottom: 1px solid blue;
 }
 
 nav .notif {
@@ -180,6 +183,7 @@ nav .kanan {
     align-items: center;
     height: 100vh;  
     /* background-color: whitesmoke; */
+    overflow-x: hidden;
     overflow-y: hidden;
     background: url('asset/bghero.png') no-repeat center center;
     background-size: cover;
@@ -719,6 +723,7 @@ nav .kanan {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 #karya .top{
   display: flex;
@@ -735,13 +740,16 @@ nav .kanan {
 .jud p.sub{
     font-size: 16px;
     color: #363636;
+    font-family: var(--font-family1);
 }
 .jud p.utama{
     font-size: 36px;
+    font-family: var(--font-family1);
 }
 #karya .jud span{
     border-top: 2px solid;
     border-radius: 30px;
+    font-family: var(--font-family1);
 }
 .boxKarya{
   display: flex;
@@ -777,13 +785,15 @@ nav .kanan {
   font-family: poppins;
   font-size: 14px;
   color: rgb(223, 223, 223);
-  background-color: #555
+  background-color: #555;
+  font-family: var(--font-family1);
 }
 .boxKarya .karya p{
   font-family: recolenta;
   font-size: 20px;
   color: white;
   background-color: #555;
+  font-family: var(--font-family1);
 }
 .showGambar{
   width: 100vw;
@@ -840,9 +850,14 @@ footer{
 
 
 .nav_footer a{
+    font-family: var(--font-family1);
     text-decoration: none;
     font-size: 16px;
     color: white;
+    transition: .5s;
+}
+.nav_footer a:hover{
+   color: #00ffff;
 }
 
 .sosmed{
@@ -859,5 +874,10 @@ footer{
     color: #007bff;
     background-color: white;
     border-radius: 50%;
+    transition: .5s;
+    cursor: pointer;
+}
+.sosmed .bx:hover{
+   transform:scale(1.2);
 }
 /* End Footer */
