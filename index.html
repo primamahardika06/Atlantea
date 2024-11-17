@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="title">
+            <a href="">
+                <img src="asset/logo.png" alt="" width="100px">
+                <h1>Atlantea</h1>
+            </a>
+        </div>
+
+        <div class="navbar">
+            <a href="">Konten</a>
+            <a href="">Peta</a>
+            <a href="">Statistik</a>
+            <a href="">Dashboard</a>
+            <a href="">Manfaat</a>
+        </div>
+
+        <div class="hamburger_menu">
+            <a href="">Konten</a>
+            <a href="">Peta</a>
+            <a href="">Statistik</a>
+            <a href="">Dashboard</a>
+            <a href="">Manfaat</a>
+        </div>
+
+
+        <div class="kanan">
+            <div class="notif">
+                <i class='bx bxs-bell'></i>
+            </div>
+            <div class="hamburger">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <div id="notification" class="notification">
+            <span id="message"></span><br>
+            <span id="recommendation"></span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="text-hero" id="text">
+            <h2>AQUA POWER CITY</h2> <br>
+            <h4>Kota Masa Depan Berbasis Energi Air</h4>
+            <a href="#sec-main"><button>Explore</button></a>
+        </div>
+        <img src="asset/tangan kanan.png" id="taka">
+        <img src="asset/tangan kiri.png" id="taki">
+        <img src="asset/bola tangan.png" id="boltangka">
+        <img src="asset/bola tangan copy.png" id="boltangki">
+        <img src="asset/pohon.png" id="pohon">
+        <img src="asset/bangunan.png" id="bangunan">
+    </section>
+
+    <section class="sec">
+        <div class="rain-container">
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+        </div>
+        <div id="sec-main" class="sec-main">
+            <div class="secmain">
+                <div class="teks-secmain">
+                    <h1>Mengapa Air adalah Masa Depan Energi Kota Kita</h1>
+                    <div class="teksmain2">
+                        <p>AquaPower City memanfaatkan inovasi teknologi berbasis air seperti energi gelombang laut,
+                            kompresi udara, mikro-hidro, dan sistem penyimpanan berbasis air. Kami berupaya menciptakan
+                            energi yang tak hanya ramah lingkungan, tetapi juga berkelanjutan dan terjangkau.</p> <br>
+                        <p>Tahukah Anda bahwa sekitar 71% permukaan Bumi ditutupi oleh air? Namun, hanya 2,5% dari
+                            jumlah tersebut yang merupakan air tawar, dan sebagian besar masih terkunci dalam gletser
+                            dan lapisan es. AquaPower City bertujuan untuk mengoptimalkan penggunaan air dengan
+                            teknologi mutakhir, memastikan keberlanjutan untuk generasi mendatang.</p>
+                    </div>
+                </div>
+                <div class="img-secmain">
+                    <img src="asset/smart city.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="tri">
+        <div class="sec-tri">
+            <div class="maps">
+                <div id="filter">
+                    <label for="technology">Pilih Jenis Teknologi:</label>
+                    <select id="technology">
+                        <option value="semua">Semua</option>
+                        <option value="mikro-hidro">Mikro Hidro</option>
+                        <option value="energi-laut">Energi Laut</option>
+                    </select>
+                </div>
+                <div id="map"></div>
+            </div>
+
+            <div class="statistik">
+                <h2 style="text-align: center;">Grafik Energi Digunakan</h2>
+                <canvas id="myHalfDonutChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="four">
+        <div class="dashboard">
+            <div class="left-panel">
+                <h3>Chat</h3>
+                <div class="chat-box" id="chatBox">
+                    <div class="message">
+                        <h4>Orang 1</h4>
+                        <p>Halo! Bagaimana keadaan air hari ini?</p>
+                    </div>
+                    <div class="message">
+                        <h4>Orang 2</h4>
+                        <p>Sudah dicek, semua baik.</p>
+                    </div>
+                    <div class="message">
+                        <h4>Orang 3</h4>
+                        <p>Ada anomali sedikit di bagian utara.</p>
+                    </div>
+                    <div class="message">
+                        <h4>Orang 4</h4>
+                        <p>Siap, akan segera diperiksa.</p>
+                    </div>
+                    <div class="message">
+                        <h4>Orang 5</h4>
+                        <p>Bagaimana dengan data terbaru?</p>
+                    </div>
+                    <div class="message">
+                        <h4>Orang 6</h4>
+                        <p>Data akan segera diupdate.</p>
+                    </div>
+                    <div class="message">
+                        <h4>Orang 7</h4>
+                        <p>Terima kasih, tim selalu siap!</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Ketik pesan...">
+                    <button onclick="sendMessage()">Kirim</button>
+                </div>
+            </div>
+            <div class="right-panel">
+                <h3>Dashboard Air</h3>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-title">Penggunaan Air</div>
+                        <div class="stat-value" id="usageValue">0%</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-title">Harga Air</div>
+                        <div class="stat-value" id="priceValue">0%</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-title">Kelainan Air</div>
+                        <div class="stat-value" id="anomalyValue">0%</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-title">Total Air Bersih</div>
+                        <div class="stat-value" id="totalCleanValue">0%</div>
+                    </div>
+                </div>
+                <div class="chart-container" id="chartContainer">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery link -->
+    <div class="sectiontwo-gallery">
+        <div class="sectiontwo-gallery-text">
+            <!-- <h2> galeri inspiratif </h2> -->
+            <h1> Our <span class="colorspan-green3"> Gallery </span> </h1>
+            <p> Kumpulan foto-foto yang berkaitan dengan <span class="colorspan-green3" style="font-weight: 900;">Power
+                    Aqua City</span> </p>
+        </div>
+        <div class="sectiontwo-gallery-img">
+            <img src="asset/smartcity.png" alt="img1">
+            <img src="asset/smartcity2.png" alt="img1">
+            <img src="asset/smartcity3.png" alt="img1">
+            <img src="asset/smartcity4.png" alt="img1">
+        </div>
+        <div class="button-box3">
+            <a class='button3' href='/_page/gallery/gallery'>Show More</a>
+        </div>
+    </div>
+    </div>
+    <!-- End of Gallery Link -->
+
+    <!-- Start NEWS ATLANTEA-->
+    <div class="news-atlantea">
+        <!-- KARYA -->
+        <div id="karya">
+            <div class="top">
+                <div class="left">
+                    <div class="jud">
+                        <p class="sub"> bisa di swipe <span></span></p>
+                        <p class="utama">Berita Mengenai Smart City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="boxKarya">
+                <a class="karya"
+                    href="https://www.kompas.id/baca/humaniora/2023/11/23/potensi-energi-air-belum-optimal-dimanfaatkan-sebagai-sumber-listrik"
+                    style="background-image: url(asset/berita1.jpg);">
+                    <span>Berita</span>
+                    <p>Potensi Energi Air Belum Optimal Dimanfaatkan sebagai Sumber Listrik</p>
+                </a>
+                <a class="karya"
+                    href="https://www.kompas.com/skola/read/2020/09/01/154500269/mengapa-energi-air-sangat-penting-bagi-makhluk-hidup"
+                    style="background-image: url(asset/berita2.jpg);">
+                    <span>Berita</span>
+                    <p>Mengapa Energi Air Sangat Penting bagi Makhluk Hidup?</p>
+                </a>
+                <a class="karya"
+                    href="https://lestari.kompas.com/read/2023/11/01/180000186/potensi-energi-air-melimpah-transmisi-lintas-pulau-jadi-solusi"
+                    style="background-image: url(asset/berita3.jpeg);">
+                    <span>Berita</span>
+                    <p>Potensi Energi Air Melimpah, Transmisi Lintas Pulau Jadi Solusi</p>
+                </a>
+                <a class="karya"
+                    href="https://www.kompas.com/global/read/2021/06/04/070301070/43-tenaga-profesional-indonesia-ikut-pelatihan-energi-air-dari-norwegia"
+                    style="background-image: url(asset/berita4.png);">
+                    <span>Berita</span>
+                    <p>43 Tenaga Profesional Indonesia Ikut Pelatihan Energi Air dari Norwegia</p>
+                </a>
+                <a class="karya"
+                    href="https://www.kompas.com/sains/read/2021/08/30/130000623/krisis-iklim-apakah-energi-air-punya-masa-depan"
+                    style="background-image: url(asset/berita5.jpg);">
+                    <span>Berita</span>
+                    <p>Krisis Iklim, Apakah Energi Air Punya Masa Depan?</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="manfaat">
+        <div class="title_manfaat">
+            <h3>Manfaat Energi Air</h3>
+            <h1>Peralihan Energi Berbasis Air <br> Langkah Tepat untuk Penghematan Energi</h1>
+        </div>
+        <div class="detail_manfaat">
+            <p>Penggunaan energi listrik konvensional yang tinggi meningkatkan beban lingkungan dan biaya operasional.
+                Di AquaPower City, energi berbasis air tidak hanya membantu mengurangi konsumsi listrik, tetapi juga
+                menghasilkan energi bersih dengan biaya lebih rendah.</p>
+        </div>
+        <div class="circle">
+            <div class="detail_circle">
+                <img src="asset/44626.jpg" alt="">
+                <p>Mengurangi Ketergantungan pada Energi Fosil</p>
+            </div>
+            <div class="detail_circle2">
+                <img src="asset/green-recycling-icon-design-element.jpg" alt="">
+                <p>Ramah Lingkungan</p>
+            </div>
+            <div class="detail_circle2">
+                <img src="asset/Stack of money and gold coins 3d cartoon style icon.jpg" alt="">
+                <p>Menghemat Pengeluaran Biaya Listrik</p>
+            </div>
+            <div class="detail_circle">
+                <img src="asset/78786.jpg" alt="">
+                <p>Mendukung Infrastruktur Kota</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo_footer">
+            <a href="">
+                <img src="asset/logo.png" alt="" width="80px">
+                <h1>Atlantea</h1>
+            </a>
+        </div>
+        <div class="nav_footer">
+            <a href="">Konten</a>
+            <a href="">Peta</a>
+            <a href="">Statistik</a>
+            <a href="">Dashboard</a>
+            <a href="">Manfaat</a>
+        </div>
+        <div class="sosmed">
+            <i class='bx bxl-gmail'></i>
+            <i class='bx bxl-tiktok' ></i>
+            <i class='bx bxl-twitter' ></i>
+            <i class='bx bxl-youtube' ></i>
+            <i class='bx bxl-whatsapp' ></i>
+            <i class='bx bxl-discord-alt' ></i>
+        </div>
+    </footer>
+</body>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</html>

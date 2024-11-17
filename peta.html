@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Interaktif Energi di Denpasar</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #map {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            width: 30%;
+            margin-top: 20px;
+        }
+        #filter {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Peta Interaktif Energi di Denpasar</h1>
+    <div id="filter">
+        <label for="technology">Pilih Jenis Teknologi:</label>
+        <select id="technology">
+            <option value="semua">Semua</option>
+            <option value="mikro-hidro">Mikro Hidro</option>
+            <option value="energi-laut">Energi Laut</option>
+        </select>
+    </div>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the Map
+        const map = L.map('map').setView([-8.6704, 115.2126], 13); // Coordinates for Denpasar
+
+        // Add a Tile Layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Energy Generation Locations
+        const energyLocations = [
+            {
+                name: "Mikro Hidro 1",
+                type: "mikro-hidro",
+                coords: [-8.6704, 115.2126],
+                description: "Lokasi Mikro Hidro 1."
+            },
+            {
+                name: "Energi Laut 1",
+                type: "energi-laut",
+                coords: [-8.6744, 115.2146],
+                description: "Lokasi Energi Laut 1."
+            },
+            {
+                name: "Mikro Hidro 2",
+                type: "mikro-hidro",
+                coords: [-8.6684, 115.2106],
+                description: "Lokasi Mikro Hidro 2."
+            }
+        ];
+
+        // Function to Add Markers
+        function addMarkers(filter) {
+            // Clear existing markers
+            map.eachLayer(function (layer) {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            // Add markers based on filter
+            energyLocations.forEach(location => {
+                if (filter === "semua" || location.type === filter) {
+                    const marker = L.marker(location.coords).addTo(map)
+                        .bindPopup(`<b>${location.name}</b><br>${location.description}`);
+                }
+            });
+        }
+
+        // Initial markers
+        addMarkers("semua");
+
+        // Filter Change Event
+        document.getElementById('technology').addEventListener('change', function (e) {
+            const selectedTechnology = e.target.value;
+            addMarkers(selectedTechnology);
+        });
+    </script>
+</body>
+</html>
